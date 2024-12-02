@@ -1,0 +1,193 @@
+{
+  "stats": {
+    "suites": 4,
+    "tests": 4,
+    "passes": 4,
+    "pending": 0,
+    "failures": 0,
+    "start": "2024-12-01T04:52:56.092Z",
+    "end": "2024-12-01T04:52:58.845Z",
+    "duration": 2753,
+    "testsRegistered": 4,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false,
+    "passPercentClass": "success",
+    "pendingPercentClass": "danger"
+  },
+  "suites": {
+    "uuid": "c883033d-3a3c-422f-b0fe-f1e39d1338c7",
+    "title": "",
+    "fullFile": "",
+    "file": "",
+    "beforeHooks": [],
+    "afterHooks": [],
+    "tests": [],
+    "suites": [
+      {
+        "uuid": "db30d0ae-15b1-4d75-8c2e-3396487781f5",
+        "title": "Delete JSON Placeholder",
+        "fullFile": "/Users/lugasaktafrimanda/Downloads/json-placeholder-test/api/test/DeleteJSONPlaceholderTest.js",
+        "file": "/api/test/DeleteJSONPlaceholderTest.js",
+        "beforeHooks": [],
+        "afterHooks": [],
+        "tests": [
+          {
+            "title": "@get As a User, I want to be able to delete JSON Placeholder",
+            "fullTitle": "Delete JSON Placeholder @get As a User, I want to be able to delete JSON Placeholder",
+            "timedOut": false,
+            "duration": 563,
+            "state": "passed",
+            "speed": "slow",
+            "pass": true,
+            "fail": false,
+            "pending": false,
+            "code": "const response = await page.deleteJSONPlaceholder();\n   \n// Validate response status\nassert(response.status).to.equal(200);\nassert(response.body).to.be.empty;\n\n    var SuccessfullDeleteJsonPlaceholder = response.body;\n    console.log(SuccessfullDeleteJsonPlaceholder);",
+            "err": {},
+            "isRoot": false,
+            "uuid": "fdfd057e-634a-4d2a-9470-e3336b210c3d",
+            "isHook": false,
+            "skipped": false
+          }
+        ],
+        "suites": [],
+        "passes": [
+          "fdfd057e-634a-4d2a-9470-e3336b210c3d"
+        ],
+        "failures": [],
+        "pending": [],
+        "skipped": [],
+        "duration": 563,
+        "root": false,
+        "rootEmpty": false,
+        "_timeout": 180000
+      },
+      {
+        "uuid": "8e4d4186-067a-468f-b863-e94e462d2813",
+        "title": "Get JSON Placeholder List",
+        "fullFile": "/Users/lugasaktafrimanda/Downloads/json-placeholder-test/api/test/GetJSONPlaceholderTest.js",
+        "file": "/api/test/GetJSONPlaceholderTest.js",
+        "beforeHooks": [],
+        "afterHooks": [],
+        "tests": [
+          {
+            "title": "@get As a User, I want to be able to get JSON Placeholder list",
+            "fullTitle": "Get JSON Placeholder List @get As a User, I want to be able to get JSON Placeholder list",
+            "timedOut": false,
+            "duration": 285,
+            "state": "passed",
+            "speed": "slow",
+            "pass": true,
+            "fail": false,
+            "pending": false,
+            "code": "const response = await page.getJSONPlaceholderList();\n// Validate response status\nassert(response.status).to.equal(200);\n// Validate jsonSchema\nassert(response.body).to.be.jsonSchema(responseSchema);\n\nassert(response.body[0]).to.have.property('id');\nresponse.body.forEach(posts => {\n assert(posts.id).to.not.be.null;\n  });\n\n  var SuccessfullGetJsonPlaceholder = response.body[0];\n  console.log(SuccessfullGetJsonPlaceholder);",
+            "err": {},
+            "isRoot": false,
+            "uuid": "2f7951e7-0118-44ba-b28f-7d92c8ead9a9",
+            "isHook": false,
+            "skipped": false
+          }
+        ],
+        "suites": [],
+        "passes": [
+          "2f7951e7-0118-44ba-b28f-7d92c8ead9a9"
+        ],
+        "failures": [],
+        "pending": [],
+        "skipped": [],
+        "duration": 285,
+        "root": false,
+        "rootEmpty": false,
+        "_timeout": 180000
+      },
+      {
+        "uuid": "23f1e261-b4eb-46b1-821e-0f43c9ddf283",
+        "title": "JSON Placholder POST",
+        "fullFile": "/Users/lugasaktafrimanda/Downloads/json-placeholder-test/api/test/PostJSONPlaceholderTest.js",
+        "file": "/api/test/PostJSONPlaceholderTest.js",
+        "beforeHooks": [],
+        "afterHooks": [],
+        "tests": [
+          {
+            "title": "@post As a User, I want to be able to create a new POST in JSON Placeholder",
+            "fullTitle": "JSON Placholder POST @post As a User, I want to be able to create a new POST in JSON Placeholder",
+            "timedOut": false,
+            "duration": 1009,
+            "state": "passed",
+            "speed": "slow",
+            "pass": true,
+            "fail": false,
+            "pending": false,
+            "code": "const response = await page.createSuccessfullNewPost().send({\n    title: 'Learn API Testing',\n    body: 'Practicing API testing with JSONPlaceholder',\n    userId: 101,\n})\n// Validate response status\nassert(response.status).to.equal(201);\n// Validate jsonSchema\nassert(response.body).to.be.jsonSchema(responseSchema);\nassert(response.body).to.have.property('id')\nassert(response.body).to.have.property('title')\nassert(response.body).to.have.property('body')\nassert(response.body.id).to.equal(101)\nassert(response.body.title).to.equal('Learn API Testing')\nassert(response.body.body).to.equal('Practicing API testing with JSONPlaceholder')\nassert(response.body.userId).to.equal(101)\n\nvar SuccessfullCreateJsonPlaceholder = response.body;\nconsole.log(SuccessfullCreateJsonPlaceholder);",
+            "err": {},
+            "isRoot": false,
+            "uuid": "78772466-a99a-4a5f-9850-79285c820c7a",
+            "isHook": false,
+            "skipped": false
+          }
+        ],
+        "suites": [],
+        "passes": [
+          "78772466-a99a-4a5f-9850-79285c820c7a"
+        ],
+        "failures": [],
+        "pending": [],
+        "skipped": [],
+        "duration": 1009,
+        "root": false,
+        "rootEmpty": false,
+        "_timeout": 180000
+      },
+      {
+        "uuid": "0cc79996-6788-4077-93a1-d5f929f690de",
+        "title": "Update JSON Placholder",
+        "fullFile": "/Users/lugasaktafrimanda/Downloads/json-placeholder-test/api/test/UpdateJSONPlaceholderTest.js",
+        "file": "/api/test/UpdateJSONPlaceholderTest.js",
+        "beforeHooks": [],
+        "afterHooks": [],
+        "tests": [
+          {
+            "title": "@post As a User, I want to be able to update JSON Placeholder",
+            "fullTitle": "Update JSON Placholder @post As a User, I want to be able to update JSON Placeholder",
+            "timedOut": false,
+            "duration": 889,
+            "state": "passed",
+            "speed": "slow",
+            "pass": true,
+            "fail": false,
+            "pending": false,
+            "code": "const response = await page.updateJSONPlaceholder().send({\n    title: 'Updated Post Title',\n    body: 'This is the updated body content.',\n    userId: 99,\n})\n// Validate response status\nassert(response.status).to.equal(200);\n// Validate jsonSchema\nassert(response.body).to.be.jsonSchema(responseSchema);\nassert(response.body).to.have.property('id')\nassert(response.body).to.have.property('title')\nassert(response.body).to.have.property('body')\nassert(response.body.id).to.equal(1)\nassert(response.body.title).to.equal('Updated Post Title')\nassert(response.body.body).to.equal('This is the updated body content.')\nassert(response.body.userId).to.equal(99)\n\nvar SuccessfullCreateJsonPlaceholder = response.body;\nconsole.log(SuccessfullCreateJsonPlaceholder);",
+            "err": {},
+            "isRoot": false,
+            "uuid": "149510cf-1ade-482f-8aa0-77bb8bc15cfd",
+            "isHook": false,
+            "skipped": false
+          }
+        ],
+        "suites": [],
+        "passes": [
+          "149510cf-1ade-482f-8aa0-77bb8bc15cfd"
+        ],
+        "failures": [],
+        "pending": [],
+        "skipped": [],
+        "duration": 889,
+        "root": false,
+        "rootEmpty": false,
+        "_timeout": 180000
+      }
+    ],
+    "passes": [],
+    "failures": [],
+    "pending": [],
+    "skipped": [],
+    "duration": 0,
+    "root": true,
+    "rootEmpty": true,
+    "_timeout": 180000
+  },
+  "copyrightYear": 2024
+}
